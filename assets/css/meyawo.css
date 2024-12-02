@@ -50,43 +50,59 @@
   box-sizing: border-box;
 }
 
+/* Estilo padrão da navbar */
+.custom-navbar {
+  background-color: transparent; /* Navbar transparente por padrão */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+  height: 70px;
+}
+
+.custom-navbar.scrolled {
+  background-color: white; /* Muda o fundo para branco quando rolar */
+  color: #6f42c1; /* Texto roxo */
+}
+
+/* Alterando a cor dos links quando rolar */
+.custom-navbar.scrolled .link {
+  color: #6f42c1 !important; /* Links roxos quando rolado */
+}
+
+/* Alterando a cor do logo quando rolar a página */
+.custom-navbar.scrolled .logo {
+  color: #6f42c1 !important; /* Cor roxa do logo quando rolar */
+}
+
+/* Alterando a cor do ícone do hambúrguer */
+.custom-navbar.scrolled #nav-toggle .hamburger-inner,
+.custom-navbar.scrolled #nav-toggle .hamburger-inner::before,
+.custom-navbar.scrolled #nav-toggle .hamburger-inner::after {
+  background-color: #6f42c1 !important; /* Todos os traços do hambúrguer roxos */
+}
+
+/* A cor do hambúrguer por padrão (antes de rolar a página) */
+.custom-navbar #nav-toggle .hamburger-inner,
+.custom-navbar #nav-toggle .hamburger-inner::before,
+.custom-navbar #nav-toggle .hamburger-inner::after {
+  background-color: #fff; /* Cor do hambúrguer preta por padrão */
+}
+
+/* Links padrão na navbar */
+.custom-navbar .link {
+  color: #fff; /* Links pretos por padrão */
+}
+
+/* Quando o hambúrguer é ativado */
+#nav-toggle {
+  color: #fff; /* Cor do hambúrguer preta por padrão */
+}
+
+
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-/* Estilos iniciais da navbar */
-.custom-navbar {
-  position: fixed; /* Fixa a navbar no topo */
-  width: 100%;
-  padding: 1rem;
-  background-color: transparent; /* Fundo transparente inicialmente */
-  transition: background-color 0.3s, color 0.3s; /* Transição suave */
-  z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
-}
-
-/* Estilo dos links da navbar */
-.link {
-  color: white; /* Texto branco quando transparente */
-  transition: color 0.3s; /* Transição suave para a cor */
-}
-
-/* Efeito de hover */
-.link:hover {
-  color: #f8f9fa; /* Cor do texto ao passar o mouse */
-}
-
-/* Quando a navbar estiver fixa após o scroll */
-.scrolled {
-  background-color: white; /* Fundo branco após o scroll */
-  color: #695aa6; /* Cor do texto roxo após o scroll */
-}
-
-/* Estilo dos links após o scroll */
-.scrolled .link {
-  color: #695aa6; /* Cor do texto roxo após o scroll */
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
@@ -103,7 +119,6 @@ body {
   text-align: left;
   background-color: #fff;
 }
-
 
 [tabindex="-1"]:focus {
   outline: 0 !important;
@@ -302,12 +317,6 @@ select {
   word-wrap: normal;
 }
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
 
 button:not(:disabled),
 [type="button"]:not(:disabled),
@@ -328,13 +337,6 @@ input[type="radio"],
 input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
-}
-
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
-  -webkit-appearance: listbox;
 }
 
 textarea {
@@ -368,11 +370,6 @@ progress {
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
-}
-
-[type="search"] {
-  outline-offset: -2px;
-  -webkit-appearance: none;
 }
 
 [type="search"]::-webkit-search-decoration {
@@ -4813,6 +4810,266 @@ input[type="button"].btn-block {
   .navbar-expand-md .navbar-toggler {
     display: none;
   }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-expand-lg > .container,
+  .navbar-expand-lg > .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: row nowrap;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .navbar-expand-lg .navbar-nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
+  }
+  .navbar-expand-lg > .container,
+  .navbar-expand-lg > .container-fluid {
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-flex-basis: auto;
+        -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+  }
+  .navbar-expand-lg .navbar-toggler {
+    display: none;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .navbar-expand-xl > .container,
+  .navbar-expand-xl > .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-expand-xl {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: row nowrap;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .navbar-expand-xl .navbar-nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .navbar-expand-xl .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+  .navbar-expand-xl .navbar-nav .nav-link {
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
+  }
+  .navbar-expand-xl > .container,
+  .navbar-expand-xl > .container-fluid {
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+  }
+  .navbar-expand-xl .navbar-collapse {
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-flex-basis: auto;
+        -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+  }
+  .navbar-expand-xl .navbar-toggler {
+    display: none;
+  }
+}
+
+.navbar-expand {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.navbar-expand > .container,
+.navbar-expand > .container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.navbar-expand .navbar-nav {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.navbar-expand .navbar-nav .dropdown-menu {
+  position: absolute;
+}
+
+.navbar-expand .navbar-nav .nav-link {
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
+}
+
+.navbar-expand > .container,
+.navbar-expand > .container-fluid {
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+}
+
+.navbar-expand .navbar-collapse {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+          flex-basis: auto;
+}
+
+.navbar-expand .navbar-toggler {
+  display: none;
+}
+
+.navbar-light .navbar-brand {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+  color: rgba(0, 0, 0, 0.95);
+}
+
+.navbar-light .navbar-nav .nav-link.disabled {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-light .navbar-toggler {
+  color: rgba(0, 0, 0, 0.7);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-light .navbar-text {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar-light .navbar-text a {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-light .navbar-text a:hover, .navbar-light .navbar-text a:focus {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-dark .navbar-brand {
+  color: #fff;
+}
+
+.navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
+  color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.navbar-dark .navbar-nav .nav-link.disabled {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-dark .navbar-nav .show > .nav-link,
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #fff;
+}
+
+.navbar-dark .navbar-toggler {
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-dark .navbar-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-dark .navbar-text a {
+  color: #fff;
+}
+
+.navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
+  color: #fff;
 }
 
 .card {
@@ -10910,6 +11167,11 @@ p {
   border: 1px solid #dee2e6;
   overflow: hidden;
   border-radius: 3px;
+  transition: box-shadow 0.3s; /* Adiciona uma transição suave para a sombra */
+}
+
+.service-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra ao passar o mouse */
 }
 
 .service-card .body {
@@ -10920,14 +11182,12 @@ p {
   margin-top: 40px;
   width: 55px;
   margin-bottom: 25px;
-  -webkit-transition: all, 0.3s;
-  transition: all, 0.3s;
+  transition: all 0.3s; /* Corrigido: sem vírgula */
 }
 
 @media (prefers-reduced-motion: reduce) {
   .service-card .body img.icon {
-    -webkit-transition: none;
-    transition: none;
+    transition: none; /* Desativa a transição se o usuário preferir menos movimento */
   }
 }
 
@@ -10936,14 +11196,12 @@ p {
   bottom: -100%;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all, 0.3s;
-  transition: all, 0.3s;
+  transition: all 0.3s; /* Corrigido: sem vírgula */
 }
 
 @media (prefers-reduced-motion: reduce) {
   .service-card .body .subtitle {
-    -webkit-transition: none;
-    transition: none;
+    transition: none; /* Desativa a transição se o usuário preferir menos movimento */
   }
 }
 
