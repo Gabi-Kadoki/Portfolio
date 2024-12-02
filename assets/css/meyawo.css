@@ -1,17 +1,5 @@
 @charset "UTF-8";
-/*!
-=========================================================
-* Meyawo Landing page
-=========================================================
 
-* Copyright: 2019 DevCRUD (https://devcrud.com)
-* Licensed: (https://devcrud.com/licenses)
-* Coded by www.devcrud.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 @import url("https://fonts.googleapis.com/css?family=Baloo+Paaji|Open+Sans:300,300i,400,400i,600,600i,700,700i");
 :root {
   --blue: #1e549f;
@@ -59,24 +47,24 @@
 
 .custom-navbar.scrolled {
   background-color: white; /* Muda o fundo para branco quando rolar */
-  color: #6f42c1; /* Texto roxo */
+  color: #695aa6; /* Texto roxo */
 }
 
 /* Alterando a cor dos links quando rolar */
 .custom-navbar.scrolled .link {
-  color: #6f42c1 !important; /* Links roxos quando rolado */
+  color: #695aa6 !important; /* Links roxos quando rolado */
 }
 
 /* Alterando a cor do logo quando rolar a página */
 .custom-navbar.scrolled .logo {
-  color: #6f42c1 !important; /* Cor roxa do logo quando rolar */
+  color: #695aa6 !important; /* Cor roxa do logo quando rolar */
 }
 
 /* Alterando a cor do ícone do hambúrguer */
 .custom-navbar.scrolled #nav-toggle .hamburger-inner,
 .custom-navbar.scrolled #nav-toggle .hamburger-inner::before,
 .custom-navbar.scrolled #nav-toggle .hamburger-inner::after {
-  background-color: #6f42c1 !important; /* Todos os traços do hambúrguer roxos */
+  background-color: #695aa6 !important; /* Todos os traços do hambúrguer roxos */
 }
 
 /* A cor do hambúrguer por padrão (antes de rolar a página) */
