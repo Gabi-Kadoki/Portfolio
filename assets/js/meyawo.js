@@ -31,8 +31,11 @@ $(document).ready(function(){
     });
 });
 
-// navbar toggle
-$('#nav-toggle').click(function(){
-    $(this).toggleClass('is-active')
-    $('ul.nav').toggleClass('show');
-});
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('custom-navbar');
+    if (window.scrollY > 0) {
+        custom-navbarr.classList.add('scrolled'); // Adiciona a classe quando rola
+    } else {
+        custom-navbar.classList.remove('scrolled'); // Remove a classe quando volta ao topo
+    }
+  }); 
